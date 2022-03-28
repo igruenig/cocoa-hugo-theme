@@ -33,6 +33,7 @@
     {{range .Site.Params.extracssfiles}}
         <link rel="stylesheet" href="{{.}}?t={{$t}}">
     {{ end }}
+    {{ with .Params.customcss }}<link rel="stylesheet" href="{{ . }}" />{{ end }}
 
 {{ else }}
 
@@ -42,6 +43,7 @@
     {{range .Site.Params.extracssfiles}}
         <link rel="stylesheet" href="{{.}}">
     {{end}}
+    {{ with .Params.customcss }}<link rel="stylesheet" href="{{ . }}" />{{ end }}
 
 {{ end }}
 
